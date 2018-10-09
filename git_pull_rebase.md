@@ -22,4 +22,4 @@
 
 ## 11. Alice's merge commit is unwound, Bob's commit is pulled, and Alice's commit is applied after Bob's commit.
 
-## 12. Alice does git push origin master, and everyone is happy they don't have to read a useless merge commit when they look at the logs in the future.
+## 12. Alice does git push origin master, and everyone is happy they don't have to read a useless merge commit when they look at the logs in the future
