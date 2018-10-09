@@ -1,5 +1,5 @@
 #!/bin/bash
-GIT_DIR="scenario-rebase-4"
+GIT_DIR="scenario-rebase-interactive"
 echo $GIT_DIR
 
 mkdir $GIT_DIR && cd $GIT_DIR
@@ -43,5 +43,15 @@ echo "Release time" >> main_file
 git acm "Release 1.0.0"
 
 git checkout featureA
-
 git lg
+
+
+# scenario-rebase-interactive
+
+# git checkout featureA
+# git rebase -i HEAD~4
+
+# resolve conflict
+
+# git add .
+# git rebase --continue

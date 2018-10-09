@@ -1,5 +1,5 @@
 #!/bin/bash
-GIT_DIR="scenario-rebase-2"
+GIT_DIR="scenario-rebase-based-off-feature-branch"
 echo $GIT_DIR
 
 mkdir $GIT_DIR && cd $GIT_DIR
@@ -53,3 +53,6 @@ echo "Finally" >> main_file
 git acm "Release"
 
 git lg
+
+
+# either take (B - A) to master or (B + B ^ A) to master
