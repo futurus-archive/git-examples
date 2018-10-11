@@ -14,7 +14,7 @@ git checkout -b featureA
 echo "This is a new feature" >> featureA
 git acm "Implement featureA"
 
-sleep 1
+sleep 0.25
 
 # master progress
 git master
@@ -27,4 +27,4 @@ git acm "More progress"
 echo "Release time" >> main_file
 git acm "Release 1.0.0"
 
-git lg
+git lgp

@@ -43,7 +43,7 @@ echo "Release time" >> main_file
 git acm "Release 1.0.0"
 
 git checkout featureA
-git lg
+git lgp
 
 
 # What happens next
