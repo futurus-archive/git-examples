@@ -45,7 +45,7 @@ git config --global alias.ci commit # git ci
 
 git config --global alias.st status # git st
 
-git config --global alias.ss "status -s" # git st
+git config --global alias.ss "status -s" # git ss
 
 git config --global alias.unstage "reset HEAD --" # git unstage bad_file
 
@@ -121,6 +121,22 @@ stash@{1}: WIP on master: c264051 Revert "added file_size"
 stash@{2}: WIP on master: 21d80a5 added number to log
 ```
 
+Note: Include untracked files with `-u` flag.
+
+```bash
+$ git status -s
+M  index.html
+ M lib/simplegit.rb
+?? new-file.txt
+
+$ git stash -u
+Saved working directory and index state WIP on master: 1b65b17 added the index file
+HEAD is now at 1b65b17 added the index file
+
+$ git status -s
+$
+```
+
 Use `git stash apply` to replay the stash snapshot.
 
 ```bash
@@ -164,22 +180,6 @@ HEAD is now at 1b65b17 added the index file
 
 $ git status -s
 M  index.html
-```
-
-Note: Include untracked files with `-u` flag.
-
-```bash
-$ git status -s
-M  index.html
- M lib/simplegit.rb
-?? new-file.txt
-
-$ git stash -u
-Saved working directory and index state WIP on master: 1b65b17 added the index file
-HEAD is now at 1b65b17 added the index file
-
-$ git status -s
-$
 ```
 
 ### Create a branch from stash
