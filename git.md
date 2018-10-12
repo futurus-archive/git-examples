@@ -238,9 +238,11 @@ Would remove tmp/
 
 ## You-messed-up [book/en/v2/Git-Basics-Undoing-Things](https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things)
 
-### `git amend`
+### `git commit --amend`
 
 ### `git reset` [book/en/v2/Git-Tools-Reset-Demystified](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
+
+- [Slides](https://drive.google.com/open?id=1drT14rssRuT73dVl9mkiyRkETBQ4G2lqcZhCyQ5RlwM)
 
 ### `git revert`
 
@@ -253,3 +255,5 @@ Would remove tmp/
 - Rebase interactively
 
 ## Workflow: `git pull` (merge) vs `git pull --rebase`
+
+See [Git Pull](git_pull_rebase.md)
