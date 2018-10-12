@@ -45,7 +45,7 @@ git config --global alias.ci commit # git ci
 
 git config --global alias.st status # git st
 
-git config --global alias.ss "status -s" # git ss
+git config --global alias.sb "status -sb" # git sb
 
 git config --global alias.unstage "reset HEAD --" # git unstage bad_file
 
@@ -213,9 +213,10 @@ Tip: ALWAYS run with `-n` flag (dry run)
 Flags:
 
 - `-d`: delete
-- `-x`: delete files in `.gitignore` as well
 - `-f`: force (DANGEROUS!)
 - `-i`: interactive mode
+- `-n`: dry run
+- `-x`: delete files in `.gitignore` as well
 
 ```bash
 $ git status -s
@@ -241,15 +242,14 @@ Would remove tmp/
 
 ### `git reset` [book/en/v2/Git-Tools-Reset-Demystified](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified)
 
-```
-git revert
-```
+### `git revert`
 
 ### `git reflog` [book/en/v2/Git-Internals-Maintenance-and-Data-Recovery#_data_recovery](https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery#_data_recovery)
 
-## Workflow: `git pull` (merge) vs `git pull --rebase`
+## Rebase scenarios based on branch workflow:
 
-- Rebase scenarios based on branch workflow:
-  - Rebase to catch up with master
-  - Rebase off of a feature branch
-  - Rebase interactively
+- Rebase to catch up with master
+- Rebase off of a feature branch
+- Rebase interactively
+
+## Workflow: `git pull` (merge) vs `git pull --rebase`
