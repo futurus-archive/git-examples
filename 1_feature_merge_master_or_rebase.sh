@@ -1,5 +1,5 @@
 #!/bin/bash
-GIT_DIR="scenario-rebase-interactive"
+GIT_DIR="scenario-you-should-rebase-than-merge"
 echo $GIT_DIR
 
 mkdir $GIT_DIR && cd $GIT_DIR
@@ -17,15 +17,6 @@ git acm "Implement featureA"
 sleep 0.1
 rm featureA
 echo "This is a new feature;" >> featureA
-git acm "Missing semi-colon"
-
-sleep 0.1
-echo "Crazy experiment" >> featureA
-git acm "Crazy experiment that might not work"
-
-sleep 0.1
-rm featureA
-echo "This is a new feature;" >> featureA
 echo "This experiment actually works" >> featureA
 git acm "Working version"
 
@@ -36,9 +27,6 @@ git master
 echo "This is added before featureA is merged into master" >> main_file
 git acm "Add a line in main_file"
 
-echo "Some more progress" >> main_file
-git acm "More progress"
-
 echo "Release time" >> main_file
 git acm "Release 1.0.0"
 
@@ -46,12 +34,18 @@ git checkout featureA
 git lgp
 
 
-# scenario-rebase-interactive
+# What happens next
 
-# git checkout featureA
-# git rebase -i HEAD~4
+# git merge master
+# echo "more progress on A" >> new_stuff
+# git acm "more progress on A"
+# git master
+# git merge featureA
 
-# resolve conflict
+# vs.
 
-# git add .
-# git rebase --continue
+# git rebase master
+# echo "more progress on A" >> new_stuff
+# git acm "more progress on A"
+# git master
+# git merge featureA

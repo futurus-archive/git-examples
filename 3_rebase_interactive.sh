@@ -1,5 +1,5 @@
 #!/bin/bash
-GIT_DIR="scenario-feature-merge-master"
+GIT_DIR="scenario-rebase-interactive"
 echo $GIT_DIR
 
 mkdir $GIT_DIR && cd $GIT_DIR
@@ -34,10 +34,8 @@ sleep 0.25
 # master progress
 git master
 echo "This is added before featureA is merged into master" >> main_file
-git acm "Add a line in main_file"
-
-echo "Some more progress" >> main_file
-git acm "More progress"
+echo "Add readme" >> readme
+git acm "Add a line in main_file & Add readme"
 
 echo "Release time" >> main_file
 git acm "Release 1.0.0"
@@ -46,18 +44,14 @@ git checkout featureA
 git lgp
 
 
-# What happens next
+# scenario-rebase-interactive
 
-# git merge master
-# git master
-# git merge featureA
-# echo "New stuff" >> new_stuff
-# git acm "new stuff"
+# git checkout featureA
+# git rebase -i HEAD~4
 
-# vs.
+# resolve conflict
 
-# git rebase master
-# git master
-# git merge featureA
-# echo "New stuff" >> new_stuff
-# git acm "new stuff"
+# git add .
+# git rebase --continue
+
+# split commit

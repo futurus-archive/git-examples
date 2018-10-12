@@ -45,15 +45,15 @@ git checkout featureA
 echo "More progress on featureA" >> featureA
 git acm "Checkpoint"
 
-sleep 0.25
+sleep 0.5
 
 # More progress on master
 git master
 # echo "Random addition" >> main_file
 # git acm "Add new thing"
 
-# echo "Another thing" >> main_file
-# git acm "Checkpoint on master"
+echo "Another thing" >> main_file
+git acm "Checkpoint on master"
 
 echo "Finally" >> main_file
 git acm "Release"
