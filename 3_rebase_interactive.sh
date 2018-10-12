@@ -1,5 +1,7 @@
 #!/bin/bash
-GIT_DIR="scenario-rebase-interactive"
+
+if [ -n "$1" ]; then GIT_DIR=$1; else GIT_DIR="scenario-rebase-interactive"; fi
+
 echo $GIT_DIR
 
 mkdir $GIT_DIR && cd $GIT_DIR
@@ -37,10 +39,12 @@ echo "This is added before featureA is merged into master" >> main_file
 echo "Add readme" >> readme
 git acm "Add a line in main_file & Add readme"
 
+echo "Some magic" >> another_file
+git acm "On second thought, this should applies before Add a line in main_file & Add readme"
+
 echo "Release time" >> main_file
 git acm "Release 1.0.0"
 
-git checkout featureA
 git lgp
 
 
