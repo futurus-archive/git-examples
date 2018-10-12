@@ -4,6 +4,8 @@ echo $GIT_DIR
 
 mkdir $GIT_DIR && cd $GIT_DIR
 
+git init
+
 echo 'alice' > alpha.html
 git acm "1"
 
